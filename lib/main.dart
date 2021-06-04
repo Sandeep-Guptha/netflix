@@ -1,4 +1,4 @@
-import 'dart:html';
+//import 'dart:html';
 
 import 'package:flutter/material.dart';
 
@@ -15,19 +15,28 @@ class MyApp extends StatelessWidget {
         backgroundColor: Colors.grey.shade800,
         body: Stack(
           children: [
-            SingleChildScrollView(),
-            Container(
-              margin: EdgeInsets.only(top: 32),
-              height: 800,
-              color: Colors.black,
-            ),
-            Container(
-              margin: EdgeInsets.only(top: 32),
-              height: 800,
-              child: Image.asset(
-                "Assets/netflix-image.webp",
-                fit: BoxFit.fill,
+            SingleChildScrollView(
+              child: Column(
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(top: 32),
+                    height: 600,
+                    color: Colors.black,
+                  ),
+                ],
               ),
+            ),
+            Column(
+              children: [
+                Container(
+                  margin: EdgeInsets.only(top: 32),
+                  height: 748,
+                  child: Image.asset(
+                    "Assets/netflix-image.webp",
+                    fit: BoxFit.fill,
+                  ),
+                ),
+              ],
             ),
             Container(
               margin: EdgeInsets.only(top: 32),
@@ -41,7 +50,7 @@ class MyApp extends StatelessWidget {
                 height: 30,
               ),
             ),
-            Container(
+            /*Container(
               margin: EdgeInsets.only(top: 710, left: 5),
               width: 350,
               height: 50,
@@ -50,7 +59,7 @@ class MyApp extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Second()),
+                    MaterialPageRoute(builder: (context) => GETSTARTED()),
                   );
                 },
                 color: Colors.red.shade900,
@@ -62,7 +71,7 @@ class MyApp extends StatelessWidget {
                       fontWeight: FontWeight.w400),
                 ),
               ),
-            ),
+            ),*/
             Container(
               margin: EdgeInsets.only(top: 200),
               alignment: Alignment.center,
@@ -112,6 +121,30 @@ class MyApp extends StatelessWidget {
                 style: TextStyle(color: Colors.white70, fontSize: 18),
               ),
             ),
+            Container(
+              margin: EdgeInsets.only(top: 710, left: 5),
+              width: 350,
+              height: 50,
+              // ignore: deprecated_member_use
+              child:
+                  // ignore: deprecated_member_use
+                  RaisedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => GETSTARTED()),
+                  );
+                },
+                color: Colors.red.shade900,
+                child: Text(
+                  "GET STARTED",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
+                      fontWeight: FontWeight.w400),
+                ),
+              ),
+            ),
           ],
         ),
       ),
@@ -119,7 +152,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class Second extends StatelessWidget {
+class GETSTARTED extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
