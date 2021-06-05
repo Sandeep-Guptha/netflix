@@ -12,142 +12,106 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Colors.grey.shade800,
-        body: Stack(
-          children: [
-            SingleChildScrollView(
-              child: Column(
+          backgroundColor: Colors.black,
+          body: Center(
+            child: Container(
+              margin: EdgeInsets.only(top: 34),
+              child: Stack(
+                fit: StackFit.expand,
                 children: [
-                  Container(
-                    margin: EdgeInsets.only(top: 32),
-                    height: 600,
-                    color: Colors.black,
-                  ),
-                ],
-              ),
-            ),
-            Column(
-              children: [
-                Container(
-                  margin: EdgeInsets.only(top: 32),
-                  height: 748,
-                  child: Image.asset(
+                  Image.asset(
                     "Assets/netflix-image.webp",
                     fit: BoxFit.fill,
                   ),
-                ),
-              ],
-            ),
-            Container(
-              margin: EdgeInsets.only(top: 32),
-              height: 800,
-              color: Colors.black38,
-            ),
-            Container(
-              margin: EdgeInsets.only(top: 40),
-              child: Image.asset(
-                "Assets/netflix logo.jpg",
-                height: 30,
+                  Positioned(
+                      child: Container(
+                    color: Colors.black45,
+                  )),
+                  Positioned(
+                      height: 35,
+                      child: Image.asset(
+                        "Assets/netflix logo.jpg",
+                      )),
+                  Container(
+                    alignment: Alignment.bottomCenter,
+                    padding: EdgeInsets.only(bottom: 280),
+                    child: Positioned(
+                        child: Text("Unlimited",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 40,
+                                fontWeight: FontWeight.bold))),
+                  ),
+                  Container(
+                    alignment: Alignment.bottomCenter,
+                    padding: EdgeInsets.only(bottom: 240),
+                    child: Positioned(
+                        child: Text("Entertainment,",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 40,
+                                fontWeight: FontWeight.bold))),
+                  ),
+                  Container(
+                    alignment: Alignment.bottomCenter,
+                    padding: EdgeInsets.only(bottom: 200),
+                    child: Positioned(
+                        child: Text("one low price.",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 40,
+                                fontWeight: FontWeight.bold))),
+                  ),
+                  Container(
+                    alignment: Alignment.bottomCenter,
+                    padding: EdgeInsets.only(bottom: 140),
+                    child: Positioned(
+                        child: Text("Everything on Netflix",
+                            style: TextStyle(
+                              color: Colors.grey.shade300,
+                              fontSize: 20,
+                            ))),
+                  ),
+                  Container(
+                    alignment: Alignment.bottomCenter,
+                    padding: EdgeInsets.only(bottom: 115),
+                    child: Positioned(
+                        child: Text("Satrting at just Rs.199/-",
+                            style: TextStyle(
+                              color: Colors.grey.shade300,
+                              fontSize: 20,
+                            ))),
+                  ),
+                  Container(
+                      alignment: Alignment.bottomCenter,
+                      padding: EdgeInsets.only(bottom: 45),
+                      child: Positioned(
+                          child: SizedBox(
+                              width: 350,
+                              height: 45,
+                              child:
+                                  // ignore: deprecated_member_use
+                                  RaisedButton(
+                                      child: Text(
+                                        "GET STARTED",
+                                        style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.w400),
+                                      ),
+                                      color: Colors.red.shade900,
+                                      onPressed: () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) =>
+                                                  GETSTARTED(),
+                                            ));
+                                      })))),
+                ],
               ),
             ),
-            /*Container(
-              margin: EdgeInsets.only(top: 710, left: 5),
-              width: 350,
-              height: 50,
-              // ignore: deprecated_member_use
-              child: RaisedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => GETSTARTED()),
-                  );
-                },
-                color: Colors.red.shade900,
-                child: Text(
-                  "GET STARTED",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
-                      fontWeight: FontWeight.w400),
-                ),
-              ),
-            ),*/
-            Container(
-              margin: EdgeInsets.only(top: 200),
-              alignment: Alignment.center,
-              child: Text(
-                "Unlimited",
-                style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 40),
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.only(top: 300),
-              alignment: Alignment.center,
-              child: Text(
-                "Entertainment,",
-                style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 40),
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.only(top: 390),
-              alignment: Alignment.center,
-              child: Text(
-                "one low price.",
-                style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 40),
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.only(top: 500),
-              alignment: Alignment.center,
-              child: Text(
-                "Everything on Netflix,",
-                style: TextStyle(color: Colors.white70, fontSize: 18),
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.only(top: 550),
-              alignment: Alignment.center,
-              child: Text(
-                "Starting at just Rs.199/-",
-                style: TextStyle(color: Colors.white70, fontSize: 18),
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.only(top: 710, left: 5),
-              width: 350,
-              height: 50,
-              // ignore: deprecated_member_use
-              child:
-                  // ignore: deprecated_member_use
-                  RaisedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => GETSTARTED()),
-                  );
-                },
-                color: Colors.red.shade900,
-                child: Text(
-                  "GET STARTED",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
-                      fontWeight: FontWeight.w400),
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
+          )),
     );
   }
 }
