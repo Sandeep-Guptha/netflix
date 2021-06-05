@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'dart:html';
+//import 'dart:html';
 
-class Getstarted extends StatelessWidget {
+class Privacy extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold();

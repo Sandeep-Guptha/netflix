@@ -1,7 +1,9 @@
-//import 'dart:html';
+import 'dart:html';
 
 import 'package:flutter/material.dart';
 import 'package:netflix/Getstarted.dart';
+import 'package:netflix/Privacy.dart';
+import 'package:netflix/SignInpage.dart';
 
 class Home extends StatelessWidget {
   @override
@@ -94,7 +96,7 @@ class Home extends StatelessWidget {
                                           fontSize: 18,
                                           fontWeight: FontWeight.w400),
                                     ),
-                                    color: Colors.red.shade900,
+                                    color: Colors.redAccent.shade700,
                                     onPressed: () async {
                                       var navigationResult =
                                           await Navigator.push(
@@ -110,6 +112,62 @@ class Home extends StatelessWidget {
                                                 ));
                                       }
                                     })))),
+                Container(
+                    alignment: Alignment.topCenter,
+                    margin: EdgeInsets.only(left: 30),
+                    child: Positioned(
+                        // ignore: deprecated_member_use
+                        child: RaisedButton(
+                            child: Text(
+                              "PRIVACY",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.w600),
+                            ),
+                            color: Colors.black12,
+                            onPressed: () async {
+                              var navigationResult = await Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Privacy()),
+                              );
+                              if (navigationResult == true) {
+                                showDialog(
+                                    context: context,
+                                    builder: (context) => AlertDialog(
+                                          title: Text("Success"),
+                                        ));
+                              }
+                            }))),
+                Container(
+                    alignment: Alignment.topRight,
+                    margin: EdgeInsets.only(right: 45),
+                    child: Positioned(
+                        // ignore: deprecated_member_use
+                        child: RaisedButton(
+                            child: Text(
+                              "SIGN IN",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.w600),
+                            ),
+                            color: Colors.black12,
+                            onPressed: () async {
+                              var navigationResult = await Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => SignInpage()),
+                              );
+                              if (navigationResult == true) {
+                                showDialog(
+                                    context: context,
+                                    builder: (context) => AlertDialog(
+                                          title: Text("Success"),
+                                        ));
+                              }
+                            }))),
               ],
             ),
           ),
