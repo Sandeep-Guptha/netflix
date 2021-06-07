@@ -21,6 +21,10 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
+  just_audio: ^0.7.4
+  audioplayer: 0.8.1
+  audioplayer_web: 0.7.1
+  url_launcher: ^5.0.2
   flutter:
     sdk: flutter
 
@@ -32,13 +36,6 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
-  flutter_launcher_icons: "^0.8.0"
-
-flutter_icons:
-  android: "launcher_icon"
-  ios: true
-  image_path: "Assets/netflix logo.jpg"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -57,6 +54,7 @@ flutter:
      - Assets/netflix logo.jpg
      - Assets/netflix-image.webp
      - Assets/netflix tran logo.png
+     - Assets/netflix intro.mp3
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

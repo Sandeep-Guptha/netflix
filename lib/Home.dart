@@ -1,9 +1,9 @@
-import 'dart:html';
+//import 'dart:html';
 
 import 'package:flutter/material.dart';
 import 'package:netflix/Getstarted.dart';
-import 'package:netflix/Privacy.dart';
 import 'package:netflix/SignInpage.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Home extends StatelessWidget {
   @override
@@ -126,19 +126,10 @@ class Home extends StatelessWidget {
                                   fontWeight: FontWeight.w600),
                             ),
                             color: Colors.black12,
-                            onPressed: () async {
-                              var navigationResult = await Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => Privacy()),
-                              );
-                              if (navigationResult == true) {
-                                showDialog(
-                                    context: context,
-                                    builder: (context) => AlertDialog(
-                                          title: Text("Success"),
-                                        ));
-                              }
+                            onPressed: () {
+                              const url =
+                                  'https://help.netflix.com/legal/privacy';
+                              launchURL(url);
                             }))),
                 Container(
                     alignment: Alignment.topRight,
@@ -172,5 +163,13 @@ class Home extends StatelessWidget {
             ),
           ),
         ));
+  }
+}
+
+launchURL(String url) async {
+  if (await canLaunch(url)) {
+    await launch(url, forceWebView: true);
+  } else {
+    throw 'Could not launch $url';
   }
 }
